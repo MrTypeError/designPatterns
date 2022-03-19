@@ -1,23 +1,23 @@
 import psycopg2
 from psycopg2 import Error
 
-# try:
+try:
     
-#     connection = psycopg2.connect(user="postgres",
-#                                   password="qwerty",
-#                                   host="127.0.0.1",
-#                                   port="5432",
-#                                   database="Store")
+    connection = psycopg2.connect(user="postgres",
+                                  password="qwerty",
+                                  host="127.0.0.1",
+                                  port="5432",
+                                  database="store")
 
     
-#     cursor = connection.cursor()
-#     cursor.execute("select * from public.Inventory;")
-#     # record = cursor.fetchone()
-#     record = cursor.fetchall()
-#     print("Data in - ", record, "\n")
+    cursor = connection.cursor()
+    cursor.execute("delete from inventory where id='3';")
+    # record = cursor.fetchone()
+    # record = cursor.fetchall()
+    # print("Data in - ", record, "\n")
 
-# except (Exception, Error) as error:
-#     print("Error while connecting to PostgreSQL", error)
+except (Exception, Error) as error:
+    print("Error while connecting to PostgreSQL", error)
 
 
 def query_exec(query):
